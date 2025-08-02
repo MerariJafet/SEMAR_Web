@@ -1,3 +1,61 @@
+/* ================= MENÚ RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .menu ul {
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+    padding: 60px 0 0 0;
+    margin: 0;
+    z-index: 1200;
+    transition: right 0.3s cubic-bezier(.7,.2,.3,1);
+  }
+  .menu ul.open {
+    right: 0;
+  }
+  .menu li {
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    padding: 18px 24px;
+  }
+  .menu li:last-child {
+    border-bottom: none;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #002244;
+    z-index: 1300;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none;
+  }
+  .menu ul {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+}
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 900px) {
   .hero-content.container {
