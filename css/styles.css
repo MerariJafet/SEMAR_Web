@@ -1,3 +1,98 @@
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 900px) {
+  .hero-content.container {
+    padding: 30px 10px;
+    text-align: center;
+  }
+  .benefits-grid, .services-grid, .gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .card-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  .hero-content.container {
+    padding: 18px 4vw;
+    text-align: center;
+  }
+  .empresa-title {
+    font-size: 1.1rem;
+    padding: 10px 0;
+  }
+  .custom-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .logo-container {
+    width: 80px;
+    height: 80px;
+  }
+  .menu ul {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+  }
+  .menu li {
+    margin: 0;
+  }
+  .card-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .tech-card {
+    min-width: unset;
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 16px 0;
+  }
+  .benefits-grid, .services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .benefit-card, .service-card {
+    min-width: unset;
+    width: 100%;
+    font-size: 1rem;
+    padding: 18px 10px;
+  }
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .project-card {
+    width: 100%;
+    min-width: unset;
+    margin: 0 auto;
+  }
+  .quiz-header h2 {
+    font-size: 1.2rem;
+  }
+  .btn-cta, .btn-cta.slim {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    bottom: 12px;
+    right: 12px;
+  }
+  .whats-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
 /* Botón flotante de WhatsApp */
 .whatsapp-float {
   position: fixed;
