@@ -1,0 +1,523 @@
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Ícono interno */
+.whats-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Contenedor de tarjetas */
+.tecnologias {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Tarjetas individuales */
+.tech-card {
+  background: linear-gradient(135deg, #002244, #0077cc);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+/* Animación al pasar el mouse */
+.tech-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 196, 255, 0.5);
+}
+/* ==========================================================================
+   SEMAR – Hoja de estilos principal
+   ========================================================================== */
+
+/* ---------- VARIABLES DE MARCA ---------- */
+:root{
+  /* Colores corporativos */
+  --brand-dark:       #0D1B2A;  /* fondo principal */
+  --brand-electric:   #00A8E8;  /* acentos/enlaces */
+  --brand-haze:       #F5F7FA;  /* texto sobre oscuro */
+  --brand-lime:       #7CFC00;  /* CTAs / hover */
+
+  /* Otros */
+  --glass-bg:         rgba(255,255,255,0.20);  /* Header translúcido casi blanco */
+  --glass-blur:       20px;
+  --radius-xl:        1.5rem;
+  --header-height:    88px;                   /* antes 72px */
+  --transition:       all .3s ease;
+  --header-bg: #FFFFFF;  /* fondo blanco pulcro */
+}
+
+.container{max-width:1280px;margin:0 auto;padding:0 1rem;}
+
+/* ---------- RESET BÁSICO ---------- */
+*,
+*::before,
+*::after{box-sizing:border-box;margin:0;padding:0;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;}
+
+/* ---------- TIPOGRAFÍA GLOBAL ---------- */
+body{
+  font-family:'Roboto',sans-serif;
+  background:linear-gradient(to bottom, #0D1B2A 0%, #182C40 30%, #304A66 70%, #495E79 100%);
+  background-attachment:fixed; /* no toques nada más */
+  color:var(--brand-haze);
+  line-height:1.6;
+  scroll-behavior:smooth;
+  padding-top:var(--header-height);   /* evita que el header fijo tape el contenido */
+}
+
+h1,h2,h3,h4,h5{
+  font-family:'Montserrat',sans-serif;
+  font-weight:600;
+  margin-bottom:.5em;
+  line-height:1.2;
+}
+
+a{color:var(--brand-electric);text-decoration:none;transition:var(--transition);}
+a:hover{color:var(--brand-lime);}
+
+/* ---------- ESTRUCTURA GENERAL ---------- */
+.section{
+  padding:6rem 1rem 4rem;
+  max-width:1280px;
+  margin:0 auto;
+  text-align:center;
+}
+
+/* ---------- HEADER FIJO + NAV ---------- */
+.main-header{
+  position:fixed;
+  top:0;left:0;width:100%;z-index:100;
+  background:var(--header-bg); /* fondo blanco puro */
+  backdrop-filter:none; /* sin translucencia */
+  box-shadow:0 2px 8px rgba(0,0,0,.06); /* sombra ligera */
+}
+
+.container-header{
+  height:var(--header-height);
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  height:68px;          /* 40 % más grande */
+  width:auto;
+  position:relative;
+  filter:none;
+}
+
+.logo::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-8px;     /* bajamos 2px extra para el nuevo tamaño */
+  width:100%;
+  height:3px;      /* antes 2px → más visible */
+  background:var(--brand-electric);
+  border-radius:1px;
+}
+
+.navbar ul{display:flex;gap:1.5rem;}
+.main-header .navbar a{ color:var(--brand-dark); }
+.main-header .navbar a:hover{ color:var(--brand-electric); }
+.navbar a{font-weight:500;}
+
+/* Modo oscuro toggle */
+.icon-btn{
+  background:none;border:none;
+  color:var(--brand-haze);
+  font-size:1.3rem;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.icon-btn:hover{transform:scale(1.1);}
+.main-header .icon-btn{
+  color:var(--brand-dark);
+}
+
+
+/* ---------- FLIP CARD GLOBAL ---------- */
+.flip-card{             /* contenedor exterior */
+  perspective:1000px;
+  overflow:hidden;
+  margin:0 auto;
+  width:100%;
+  min-height:420px;      /* garantiza altura estable */
+}
+.flip-card-inner{       /* contenedor giratorio */
+  position:relative;
+  width:100%;
+  height:100%;
+  transition:transform .8s;
+  transform-style:preserve-3d;
+}
+.flip-card.is-flipped .flip-card-inner{
+  transform:rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back{        /* ambas caras */
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  text-align:center;
+  backface-visibility:hidden;
+  border-radius:var(--radius-xl);
+}
+.flip-card-front{
+  background:rgba(255,255,255,.04);
+}
+.flip-card-back{
+  background:rgba(0,168,232,.15);  /* azul eléctrico translúcido */
+  transform:rotateY(180deg);
+  color:var(--brand-haze);
+}
+.flip-card-back .hint{
+  font-size:.8rem;
+  opacity:.7;
+  margin-top:.8rem;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 1rem;
+}
+.hero-inner{max-width:760px;}
+.accent{color:var(--brand-electric);}
+
+.btn-cta{
+  display:inline-block;
+  margin-top:1.7rem;
+  padding:.9rem 2.4rem;
+  background:var(--brand-lime);
+  color:var(--brand-dark);
+  border-radius:var(--radius-xl);
+  font-weight:600;
+  transition:var(--transition);
+}
+.btn-cta:hover{transform:translateY(-4px);}
+
+/* ---------- SERVICIOS (grid) ---------- */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2rem;
+  margin-top:3rem;
+}
+
+.service-card{
+  padding:2rem;
+  background:var(--glass-bg);
+  backdrop-filter:blur(var(--glass-blur));
+  border-radius:var(--radius-xl);
+  transition:var(--transition);
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,0.1);
+}
+.service-card i{
+  font-size:2.7rem;
+  margin-bottom:1rem;
+  color:var(--brand-electric);
+}
+
+/* ---------- GALERÍA DE PROYECTOS ---------- */
+.gallery{
+  display:grid;
+  gap:4rem;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); /* 1 col por defecto */
+  justify-items:center;
+}
+@media(min-width:1024px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr);  /* 2 columnas en desktop */
+  }
+}
+.gallery img{
+  display:block;
+  margin:0 auto 1rem;
+  border-radius:var(--radius-xl);
+  height:200px;
+  object-fit:cover;
+}
+.gallery .project-card{
+  width:100%;
+  max-width:500px;
+}
+
+/* ---------- BRANDS (Swiper) ---------- */
+.brands .swiper{
+  margin-top:3rem;
+  padding:1rem 0;
+}
+.brands .swiper-slide{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.6;
+  transition:var(--transition);
+}
+.brands .swiper-slide:hover{opacity:1;}
+.brands img{height:46px;width:auto;}
+
+/* ---------- FORMULARIO CONTACTO ---------- */
+#contactForm{
+  max-width:640px;
+  margin:0 auto 2rem;
+}
+#contactForm input,
+#contactForm textarea{
+  width:100%;
+  padding:1rem;
+  margin:.6rem 0;
+  border-radius:.6rem;
+  border:none;
+  background:rgba(255,255,255,.1);
+  color:var(--brand-haze);
+}
+#contactForm button{
+  cursor:pointer;border:none;
+}
+
+/* Info contacto */
+.contact-info{
+  max-width:640px;
+  margin:0 auto 2rem;
+  text-align:left;
+}
+.contact-info p{
+  display:flex;align-items:center;gap:.5rem;
+  margin:.3rem 0;font-size:.95rem;
+}
+.contact-info i{color:var(--brand-electric);}
+
+/* ---------- BOTÓN WHATSAPP ---------- */
+.whatsapp-float{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.9rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+  transition:var(--transition);
+  z-index:120;
+}
+.whatsapp-float:hover{transform:scale(1.1);}
+
+/* ---------- LIGHT THEME (modo claro) ---------- */
+body.light{
+  --brand-dark:#F5F7FA;
+  --brand-haze:#0D1B2A;
+  background:var(--brand-haze);
+  color:var(--brand-dark);
+}
+body.light .main-header{background:rgba(0,0,0,.06);}
+body.light .service-card i{color:var(--brand-electric);}
+body.light a{color:var(--brand-electric);}
+body.light a:hover{color:var(--brand-dark);}
+
+/* ---------- MEDIA QUERIES ---------- */
+@media (max-width:768px){
+  .hero{background-position:center top;}
+  .navbar ul{gap:1rem;font-size:.9rem;}
+  .container-header{padding:0 .7rem;}
+  .contact-info{text-align:center;}
+}
+
+.main-header.smaller{
+  height:70px;
+  background:var(--header-bg);
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Nombre de la empresa fijo arriba */
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 2000;
+  backdrop-filter: blur(6px);
+  margin-bottom: 10px; /* Agrega separación */
+}
+
+.empresa-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  letter-spacing: 1.5px;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.empresa-title .azul {
+  color: #00b8ff;
+}
+
+.animate-title {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeDown 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header general con transparencia */
+.custom-header {
+  margin-top: 30px; /* Antes era 80px o 60px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #002244cc, #0077ccaa, #00c4ffaa);
+  padding: 0.8rem 3rem; /* Reduce grosor vertical */
+  height: 70px; /* Reduce altura visual del header */
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 50px; /* debajo de la topbar */
+  z-index: 1000;
+}
+
+/* Nuevo contenedor para permitir desbordamiento del logo */
+.logo-wrapper {
+  position: relative;
+  top: -40px; /* Ajusta entre -30px y -50px según cómo se vea */
+  z-index: 1001;
+}
+
+/* Logo más grande, sobresaliendo del header */
+.logo-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 3px solid white;
+}
+
+.logo-container:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 20px rgba(0, 196, 255, 0.6);
+}
+
+.logo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Menú */
+.menu {
+  margin-left: 180px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.menu ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00c4ff;
+  transition: width 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: #00c4ff;
+}
+
+.menu ul li a:hover::after {
+  width: 100%;
+}

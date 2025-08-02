@@ -1,0 +1,49 @@
+/* ==========================================================================
+   HERO + BENEFICIOS
+   ========================================================================== * /
+.hero{
+  position:relative;
+  min-height:85vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:0 1rem;color:var(--brand-haze);
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:#0D1B2A url('../assets/img/hero-poster.webp') center/cover no-repeat;
+}
+/* Escalar el SVG/lottie a 25 % del ancho de viewport */
+.hero-bg svg{
+  width:25vw;
+  height:25vw;
+  position:absolute;          /* centra sobre el fondo */
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  min-width:200px;            /* tamaño mínimo para pantallas pequeñas */
+  min-height:200px;
+  pointer-events:none;        /* que no intercepte clics */
+}
+/* Lottie canvas se inyectará inside .hero-bg */
+.hero-content{max-width:800px;position:relative;z-index:2;}
+.hero h1{font-size:clamp(1.8rem,5vw,3.2rem);}
+.scroll-cue{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  background:none;border:none;color:var(--brand-haze);font-size:1.7rem;
+  animation:bounce 2s infinite;cursor:pointer;
+}
+@keyframes bounce{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,10px);}}
+
+/* ---- BENEFICIOS ---- */
+.benefits-grid{
+  display:grid;gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin-top:3rem;
+}
+.benefit-card{
+  background:rgba(255,255,255,.04);
+  border-radius:var(--radius-xl);padding:2rem;
+  backdrop-filter:blur(var(--glass-blur));
+  transition:var(--transition);
+}
+.benefit-card:hover{transform:translateY(-6px);}
+.benefit-card i{font-size:2.3rem;color:var(--brand-electric);margin-bottom:1rem;}

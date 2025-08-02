@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos de Éxito | SEMAR</title>
+
+  <!-- reutilizamos estilos globales -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/cases.css">
+
+  <!-- GLightbox y MixItUp -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+</head>
+<body>
+
+  <header class="main-header glass">
+    <div class="container-header">
+      <img src="assets/logo.png" alt="Logo CTRA 60" class="logo">
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+          <li><a href="cases.html">Casos</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" aria-label="Cambiar tema" class="icon-btn">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== CASOS DE ÉXITO ===== -->
+  <section class="cases section">
+    <h2>Casos de Éxito</h2>
+
+    <!-- Filtros -->
+    <div class="filter-controls">
+      <button class="filter-btn" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter=".gobierno">Gobierno</button>
+      <button class="filter-btn" data-filter=".infra">Infraestructura</button>
+      <button class="filter-btn" data-filter=".seguridad">Seguridad</button>
+    </div>
+
+    <!-- Galería -->
+    <div id="cases-grid">
+      <!-- Cárcel de Querétaro (flip card) -->
+      <div class="mix seguridad flip-card">
+        <div class="flip-card-inner">
+
+          <!-- Frente -->
+          <div class="flip-card-front">
+            <a href="assets/proyectos/carcel-queretaro.jpg" class="glightbox" data-gallery="cases">
+              <img src="assets/proyectos/carcel-queretaro.jpg" alt="Cárcel de Querétaro">
+            </a>
+            <h3>Cárcel de Querétaro</h3>
+            <p>Mejoras en zonas de ejercicio y videovigilancia para reforzar el control interno.</p>
+          </div>
+
+          <!-- Reverso -->
+          <div class="flip-card-back">
+            <p>
+              Se realizó mantenimiento integral en áreas comunes y se ampliaron las zonas de ejercicio para actividades controladas.
+              Se reforzó el sistema de videovigilancia con nuevas cámaras, optimizando el monitoreo 24/7 y elevando los estándares de seguridad.
+            </p>
+            <p class="hint">(clic para volver)</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tren Maya (flip card) -->
+      <div class="mix gobierno flip-card">
+        <div class="flip-card-inner">
+          <!-- Frente -->
+          <div class="flip-card-front">
+            <a href="assets/proyectos/tren-maya.jpg" class="glightbox" data-gallery="cases">
+              <img src="assets/proyectos/tren-maya.jpg" alt="Tren Maya">
+            </a>
+            <h3>Tren Maya</h3>
+            <p>Mantenimiento integral a 8 estaciones estratégicas. SLA operativo de 99.9 %.</p>
+          </div>
+
+          <!-- Reverso -->
+          <div class="flip-card-back">
+            <p>
+              Se realizó mantenimiento preventivo y correctivo en zonas comunes, pasillos, sanitarios y sistemas eléctricos.
+              Se reforzó la infraestructura de videovigilancia y se inspeccionaron vías y accesos críticos.
+              Estas acciones aseguraron condiciones óptimas para la operación diaria y la experiencia de los usuarios.
+            </p>
+            <p class="hint">(clic para volver)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INPI (flip card) -->
+      <div class="mix infra flip-card">
+        <div class="flip-card-inner">
+
+          <!-- Frente -->
+          <div class="flip-card-front">
+            <a href="assets/proyectos/inpi.jpg" class="glightbox" data-gallery="cases">
+              <img src="assets/proyectos/inpi.jpg" alt="Torres INPI">
+            </a>
+            <h3>INPI</h3>
+            <p>Mantenimiento físico y técnico en torres de comunicación AM y FM.</p>
+          </div>
+
+          <!-- Reverso -->
+          <div class="flip-card-back">
+            <p>
+              Se brindó mantenimiento estructural a torres de radiocomunicación, asegurando su estabilidad y operación continua.
+              Además, se revisaron y ajustaron antenas AM y FM, garantizando cobertura óptima y desempeño técnico para las transmisiones institucionales.
+            </p>
+            <p class="hint">(clic para volver)</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CENACE (flip card) -->
+      <div class="mix gobierno flip-card">
+        <div class="flip-card-inner">
+          <!-- Frente -->
+          <div class="flip-card-front">
+            <a href="assets/proyectos/cenace.jpg" class="glightbox" data-gallery="cases">
+              <img src="assets/proyectos/cenace.jpg" alt="CENACE">
+            </a>
+            <h3>CENACE</h3>
+            <p>Soporte y mantenimiento al sistema de monitoreo y pantallas de control.</p>
+          </div>
+
+          <!-- Reverso -->
+          <div class="flip-card-back">
+            <p>
+              Optimización del sistema de monitoreo en tiempo real, ajustes de calibración visual
+              en las pantallas de supervisión energética, y mejora en los tiempos de alerta ante incidentes críticos.
+              El mantenimiento aumentó la eficiencia operativa del centro nacional de control.
+            </p>
+            <p class="hint">(clic para volver)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer opcional, igual al de index -->
+  <!-- … -->
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script defer src="js/cases.js"></script>
+</body>
+</html>

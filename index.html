@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>SEMAR | Soluciones tecnológicas integrales</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome icons -->
+  <script src="https://kit.fontawesome.com/a9c3c2c5af.js" crossorigin="anonymous"></script>
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/widgets.css">
+</head>
+<body>
+
+<!-- Encabezado con nombre de empresa -->
+<div class="topbar">
+  <h1 class="empresa-title animate-title">
+    GRUPO SEMAR <span class="azul">INGENERY</span> DE MEXICO
+  </h1>
+</div>
+
+<header class="custom-header">
+  <div class="logo-wrapper">
+    <div class="logo-container">
+      <video autoplay loop muted playsinline class="logo-video">
+        <source src="assets/logomov.mp4" type="video/mp4" />
+        Tu navegador no soporta videos.
+      </video>
+    </div>
+  </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Proyectos</a></li>
+      <li><a href="#">Casos</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- HERO narrativo -->
+  <section id="inicio" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content container">
+      <h1 data-sr>
+        Tecnología <span class="accent">inteligente</span> que conecta, protege y transforma tu operación.
+      </h1>
+      <p class="slogan">Tecnología que te protege, conecta y vuela contigo.</p>
+
+      <section class="tecnologias">
+        <div class="card-grid">
+          <div class="tech-card">CCTV</div>
+          <div class="tech-card">DRONES</div>
+          <div class="tech-card">MONITOREO</div>
+          <div class="tech-card">C5</div>
+          <div class="tech-card">REDES</div>
+        </div>
+      </section>
+      <a href="#contacto" class="btn-cta" data-sr-delay="300">Solicita una cotización</a>
+    </div>
+    <button class="scroll-cue" aria-label="Desplázate"><i class="fa-solid fa-chevron-down"></i></button>
+  </section>
+<!-- =========================================================
+     TEST DE MADUREZ DIGITAL  (Paso 1 – estructura)
+========================================================= -->
+<section id="madurez" class="digital-maturity-widget">
+
+  <!-- Encabezado -->
+  <div class="quiz-header">
+    <h2>Test de Madurez Digital</h2>
+
+    <!-- Barra de progreso -->
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <!-- Contenedor dinámico de preguntas -->
+  <div class="question-container">
+    <!-- JS insertará aquí las preguntas en el Paso 2 -->
+  </div>
+
+  <!-- Controles de navegación (ocultos por ahora) -->
+  <div class="quiz-controls">
+    <button id="btnPrev" class="btn-cta slim" disabled>← Anterior</button>
+    <button id="btnNext" class="btn-cta">Siguiente →</button>
+  </div>
+
+  <!-- Resultado final (oculto inicialmente) -->
+  <div class="results-container hidden">
+    <h3 id="resultLevel"></h3>
+    <p id="resultDesc"></p>
+
+    <ul id="resultRecs"></ul>
+
+    <a href="#contacto" class="btn-cta slim">Recibe tu reporte</a>
+  </div>
+
+</section>
+
+  <!-- BENEFICIOS clave -->
+  <section class="benefits section">
+    <div class="benefits-grid">
+      <article class="benefit-card" data-sr><i class="fa-solid fa-shield-halved"></i><h3>Seguridad 360°</h3><p>Cobertura perimetral y monitoreo 24/7 con analítica IA.</p></article>
+      <article class="benefit-card" data-sr-delay="100"><i class="fa-solid fa-network-wired"></i><h3>Redes Sin Límites</h3><p>Infraestructura LAN/Wi‑Fi escalable con SLA 99.9 %.</p></article>
+      <article class="benefit-card" data-sr-delay="200"><i class="fa-solid fa-cloud"></i><h3>Escalabilidad Cloud</h3><p>Migraciones seguras a AWS y Azure en tiempo récord.</p></article>
+      <article class="benefit-card" data-sr-delay="300"><i class="fa-solid fa-chart-line"></i><h3>ROI Medible</h3><p>Panel de métricas en tiempo real y ahorros auditables.</p></article>
+    </div>
+  </section>
+
+<section id="servicios" class="services section">
+  <h2>Nuestros Servicios</h2>
+  <div class="services-grid">
+    <article class="service-card">
+      <i class="fa-solid fa-video"></i>
+      <h3>CCTV & Seguridad Física</h3>
+      <p>Videovigilancia de alta resolución con analítica e IA.</p>
+    </article>
+    <article class="service-card">
+      <i class="fa-solid fa-network-wired"></i>
+      <h3>Infraestructura de Redes</h3>
+      <p>Diseño, cableado estructurado y LAN/Wi‑Fi de alto desempeño.</p>
+    </article>
+    <article class="service-card">
+      <i class="fa-solid fa-cloud"></i>
+      <h3>Soluciones en la Nube</h3>
+      <p>Implementación segura en AWS, Azure y nube híbrida.</p>
+    </article>
+    <article class="service-card">
+      <i class="fa-solid fa-phone-volume"></i>
+      <h3>Telefonía IP</h3>
+      <p>Comunicación sobre VoIP con integración en CRM y call‑center.</p>
+    </article>
+    <article class="service-card">
+      <i class="fa-solid fa-drone"></i>
+      <h3>Drones y Radioenlaces</h3>
+      <p>Monitoreo aéreo e inspección con enlaces de largo alcance.</p>
+    </article>
+    <article class="service-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Soporte & Monitoreo 24/7</h3>
+      <p>Mesa de ayuda, mantenimiento preventivo y correctivo.</p>
+    </article>
+  </div>
+</section>
+
+<section id="proyectos" class="proyectos section">
+  <h2>Proyectos Recientes</h2>
+  <p class="intro-proyectos">
+    En <strong>CTRA 60</strong> hemos desarrollado proyectos clave que han transformado la infraestructura tecnológica en México:
+  </p>
+
+  <!-- ===== GALERÍA · TARJETAS FLIP ===== -->
+  <div class="gallery">
+
+    <!-- Cárcel de Querétaro -->
+    <div class="project-card flip-card">
+      <div class="flip-card-inner">
+
+        <!-- FRONT -->
+        <div class="flip-card-front">
+          <img src="assets/proyectos/carcel-queretaro.jpg" alt="Cárcel de Querétaro">
+          <h3>Cárcel de Querétaro</h3>
+          <p>Videovigilancia y control de accesos 24/7.</p>
+        </div>
+
+        <!-- BACK -->
+        <div class="flip-card-back">
+          <p>Mantenimiento integral y ampliación de cámaras, elevando la seguridad operativa y reduciendo incidentes 40 %.</p>
+          <p class="hint">(clic para volver)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tren Maya -->
+    <div class="project-card flip-card">
+      <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+          <img src="assets/proyectos/tren-maya.jpg" alt="Tren Maya">
+          <h3>Tren Maya</h3>
+          <p>Mantenimiento de infraestructura tecnológica en estaciones clave.</p>
+        </div>
+
+        <div class="flip-card-back">
+          <p>Mantenimiento preventivo y correctivo a 8 estaciones; SLA operativo 99.9 % y reducción de fallas críticas 92 %.</p>
+          <p class="hint">(clic para volver)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INPI -->
+    <div class="project-card flip-card">
+      <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+          <img src="assets/proyectos/inpi.jpg" alt="INPI">
+          <h3>INPI</h3>
+          <p>22 torres de radioenlaces AM/FM para comunidades indígenas.</p>
+        </div>
+
+        <div class="flip-card-back">
+          <p>Mantenimiento estructural y ajuste de antenas AM / FM, garantizando cobertura óptima y operación continua.</p>
+          <p class="hint">(clic para volver)</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CENACE -->
+    <div class="project-card flip-card">
+      <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+          <img src="assets/proyectos/cenace.jpg" alt="CENACE">
+          <h3>CENACE</h3>
+          <p>Sistema de monitoreo y pantallas de control 24/7.</p>
+        </div>
+
+        <div class="flip-card-back">
+          <p>Optimización del monitoreo en tiempo real y calibración visual, mejorando los tiempos de alerta ante incidentes críticos.</p>
+          <p class="hint">(clic para volver)</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /gallery -->
+</section>
+
+<section class="brands section">
+  <h2>Partners Tecnológicos</h2>
+  <div class="swiper brands-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="assets/marcas/cisco.svg" alt="Cisco"></div>
+      <div class="swiper-slide"><img src="assets/marcas/huawei.svg" alt="Huawei"></div>
+      <div class="swiper-slide"><img src="assets/marcas/dahua.svg" alt="Dahua"></div>
+      <div class="swiper-slide"><img src="assets/marcas/hikvision.svg" alt="Hikvision"></div>
+      <div class="swiper-slide"><img src="assets/marcas/ubiquiti.svg" alt="Ubiquiti"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact section">
+  <h2>Contáctanos</h2>
+
+  <form id="contactForm" action="https://formspree.io/f/mayzorgq" method="POST">
+    <input type="text" name="name" placeholder="Nombre*" required>
+    <input type="email" name="_replyto" placeholder="Correo*" required>
+    <textarea name="message" rows="6" placeholder="Cuéntanos tu proyecto*" required></textarea>
+    <button type="submit" class="btn-cta">Enviar mensaje</button>
+  </form>
+
+  <div class="contact-info">
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+525610869771">+52 56 10 869 771</a></p>
+    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:ventas@ctraudaz.com">ventas@ctraudaz.com</a></p>
+    <p><i class="fa-solid fa-location-dot"></i> Circuito Economistas 162, Naucalpan, Edo. Méx.</p>
+  </div>
+
+  <iframe
+    src="https://www.google.com/maps?q=Circuito+Economistas+162+Satelite&output=embed"
+    loading="lazy" style="border:0;width:100%;height:300px;"></iframe>
+</section>
+
+
+<a href="https://wa.me/525561016082?text=Hola%2C%20estoy%20interesado%20en%20recibir%20informes%20de%20sus%20soluciones%20de%20tecnolog%C3%ADa"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp contacto">
+  <img src="assets/img/whatslogo.png" alt="WhatsApp" class="whats-icon">
+</a>
+
+<!-- Swiper (carrusel logos y testimonios) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- GLightbox (galería proyectos) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+</body>
+<!-- Lottie CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+<!-- ScrollReveal CDN -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script defer src="js/hero.js"></script>
+<script defer src="js/main.js"></script>
+<script defer src="widgets/madurez.js"></script>
+</body>
+</html>
